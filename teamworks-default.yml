@@ -1,2 +1,3 @@
 ports:
   kontext: 4004
+  klient: 4005
