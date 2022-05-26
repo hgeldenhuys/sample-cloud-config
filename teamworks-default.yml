@@ -2,3 +2,11 @@ ports:
   tiket: 4002
   skema: 4005
   feature: 111
+
+contextId:
+  uuid: string    # Universal Unique ID (instance ID)
+  type: string    # Type of context, example state-machine name
+  path: string    #  Sub-items in context, example: /conversation. default=/
+  time: number    # Multiple contexts of same uuid, type, path but chronological
+  tags: string[]  # Additional tag metadata
+
