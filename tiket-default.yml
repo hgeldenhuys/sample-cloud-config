@@ -11,7 +11,7 @@ machine:
   initial: 'New'
   context: { }
   states:
-    New:
+    'New':
       on:
         Start:
           target: 'In Progress'
