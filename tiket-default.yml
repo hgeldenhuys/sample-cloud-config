@@ -12,30 +12,4 @@ machine:
   context: { }
   states:
     'New':
-      on:
-        Start:
-          target: 'In Progress'
-          actions:
-            - logEvent
-        Cancel:
-          target: 'Cancelled'
     'In Progress':
-      entry:
-      - resuming
-      on:
-        Complete:
-          target: 'Completed'
-        Suspend:
-          target: 'Suspended'
-        Cancel:
-          target: 'Cancelled'
-    Completed:
-      type: 'final'
-    Cancelled:
-      type: 'final'
-    Suspended:
-      on:
-        Resume:
-          target: 'In Progress'
-        Cancel:
-          target: 'Cancelled'
