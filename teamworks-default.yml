@@ -2,4 +2,6 @@ ports:
   kontext: 4004
   klient: 4006
   tiket: 4002
-name: Jack
+topics:
+  sink: sink
+  log: log
