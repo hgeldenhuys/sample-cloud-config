@@ -22,7 +22,7 @@ machine:
     'In Progress':
       entry:
       - resuming
-      on:
+      'on':
         Complete:
           target: 'Completed'
         Suspend:
@@ -34,7 +34,7 @@ machine:
     Cancelled:
       type: 'final'
     Suspended:
-      on:
+      'on':
         Resume:
           target: 'In Progress'
         Cancel:
