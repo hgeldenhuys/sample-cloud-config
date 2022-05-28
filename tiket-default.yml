@@ -12,7 +12,7 @@ machine:
   context: { }
   states:
     'New':
-      on:
+      'on':
         Start:
           target: 'In Progress'
           actions:
