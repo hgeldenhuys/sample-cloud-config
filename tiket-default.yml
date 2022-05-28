@@ -7,7 +7,8 @@ topik:
     log: log
 machine:
   id: 'ticket'
-  type: 'standard'
+  meta:
+    type: 'standard'
   initial: 'New'
   context: { }
   states:
