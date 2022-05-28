@@ -1,4 +1,4 @@
 topik:
   client-id: teamworks.tiket
   brokers:
-    localhost:9092
+    - localhost:9092
