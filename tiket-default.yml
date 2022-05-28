@@ -13,7 +13,5 @@ machine:
   states:
     - 'New':
       - on:
-          A:
     - 'In Progress':
       - on:
-          B:
