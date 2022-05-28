@@ -2,3 +2,6 @@ topik:
   client-id: teamworks.tiket
   brokers:
     - localhost:9092
+  topics:
+    sink: sink
+    log: log
