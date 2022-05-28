@@ -12,4 +12,6 @@ machine:
   context: { }
   states:
     'New':
+      on:
     'In Progress':
+      on:
