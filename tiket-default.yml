@@ -11,9 +11,9 @@ machine:
   initial: 'New'
   context: { }
   states:
-    'New':
+    - 'New':
       - on:
           A:
-    'In Progress':
+    - 'In Progress':
       - on:
           B:
