@@ -28,6 +28,8 @@ machine:
           target: 'Completed'
         Suspend:
           target: 'Suspended'
+        Pause:
+          target: 'Suspended'
         Cancel:
           target: 'Cancelled'
     Completed:
