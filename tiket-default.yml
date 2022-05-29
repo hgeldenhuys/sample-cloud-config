@@ -40,3 +40,5 @@ machine:
           target: 'In Progress'
         Cancel:
           target: 'Cancelled'
+        Reset:
+          target: 'New'
