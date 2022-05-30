@@ -1,1 +1,46 @@
-port: 4004
+topik:
+  client-id: teamworks.kontext
+  brokers:
+    - localhost:9092
+  topics:
+    sink: sink
+    log: log
+machine:
+  id: 'ticket'
+  meta:
+    type: 'standard'
+  initial: 'New'
+  context: { }
+  states:
+    'New':
+      'on':
+        Start:
+          target: 'In Progress'
+          actions:
+            - logEvent
+        Cancel:
+          target: 'Cancelled'
+    'In Progress':
+      entry:
+        - resuming
+      'on':
+        Complete:
+          target: 'Completed'
+        Suspend:
+          target: 'Suspended'
+        Pause:
+          target: 'Suspended'
+        Cancel:
+          target: 'Cancelled'
+    Completed:
+      type: 'final'
+    Cancelled:
+      type: 'final'
+    Suspended:
+      'on':
+        Resume:
+          target: 'In Progress'
+        Cancel:
+          target: 'Cancelled'
+        Reset:
+          target: 'New'
