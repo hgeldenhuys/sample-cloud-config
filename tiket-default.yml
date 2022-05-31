@@ -30,7 +30,7 @@ machine:
           target: 'Suspended'
         Save:
           target: 'In Progress'
-          actions: ['saveContext']
+          actions: ['saveContext', 'logEvent']
         Cancel:
           target: 'Cancelled'
     Completed:
