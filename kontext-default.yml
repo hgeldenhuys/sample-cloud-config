@@ -1,5 +1,6 @@
 topik:
   client-id: teamworks.kontext
+  group-id: teamworks.kontext
   brokers:
     - localhost:9092
   topics:
