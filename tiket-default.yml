@@ -33,6 +33,7 @@ machine:
           actions: ['saveContext', 'logEvent']
         Cancel:
           target: 'Cancelled'
+          cond: 'hasCancellationReason'
     Completed:
       type: 'final'
     Cancelled:
@@ -43,5 +44,6 @@ machine:
           target: 'In Progress'
         Cancel:
           target: 'Cancelled'
+          cond: 'hasCancellationReason'
         Reset:
           target: 'New'
