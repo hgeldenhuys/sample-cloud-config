@@ -1,5 +1,5 @@
 topik:
-  client-id: teamworks.task
+  client-id: teamworks.team
   brokers:
     - localhost:9092
   topics:
