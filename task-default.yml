@@ -1,0 +1,51 @@
+topik:
+  client-id: teamworks.tiket
+  brokers:
+    - localhost:9092
+  topics:
+    sink: sink
+    log: log
+machine:
+  id: 'ticket'
+  meta:
+    type: 'standard'
+  initial: 'New'
+  context: { }
+  states:
+    'New':
+      'on':
+        Start:
+          target: 'In Progress'
+          actions:
+            - logEvent
+        Cancel:
+          target: 'Cancelled'
+    'In Progress':
+      entry:
+      - resuming
+      'on':
+        Complete:
+          target: 'Completed'
+        Suspend:
+          target: 'Suspended'
+        Save:
+          target: 'In Progress'
+          actions: ['saveContext', 'logEvent']
+        Cancel:
+          target: 'Cancelled'
+          cond:
+            type: 'hasCancellationReason'
+            minLength: 3
+    Completed:
+      type: 'final'
+    Cancelled:
+      type: 'final'
+    Suspended:
+      'on':
+        Resume:
+          target: 'In Progress'
+        Cancel:
+          target: 'Cancelled'
+          cond: 'hasCancellationReason'
+        Reset:
+          target: 'New'
