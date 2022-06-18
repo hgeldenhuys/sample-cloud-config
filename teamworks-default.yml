@@ -4,3 +4,4 @@ ports:
   tiket: 4002
   task: 4001
   krew: 4003
+  dokument: 4007
