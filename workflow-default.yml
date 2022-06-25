@@ -1,0 +1,7 @@
+topik:
+  client-id: teamworks.workflow
+  brokers:
+    - localhost:9092
+  topics:
+    sink: sink
+    log: log

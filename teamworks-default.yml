@@ -5,3 +5,4 @@ ports:
   task: 4001
   krew: 4003
   dokument: 4007
+  workflow: 4005
