@@ -1,5 +1,5 @@
 topik:
-  client-id: teamworks.workflow
+  client-id: teamworks.objekt
   brokers:
     - localhost:9092
   topics:
